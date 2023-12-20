@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>FuncBox: Mathematical Toolkit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="css/material-dashboard.min.css">
+
+    <!-- Include Black Dashboard CSS -->
+    <link rel="stylesheet" href="css/material-dashboard.css">
+    <style>
+        body {
+            background-color: #212529;
+            color: #ffffff;
+        }
+
+        .form-group label {
+            color: #ffffff;
+        }
+
+        .form-control {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            background-color: #212529;
+            border-color: #212529;
+        }
+
+        .btn-primary:hover {
+            background-color: #212532;
+            border-color: #212532;
+        }
+
+        .button-div {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #661645;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">FuncBox: Mathematical Toolkit</h2>
+
+                <div class="form-group">
+                    <label for="functionSelect">Escolha uma função:</label>
+                    <select class="form-control" id="functionSelect">
+                        <option value="verifyPrime">Verify a prime number</option>
+                        <option value="primeFactors">Find all prime factors of a number</option>
+                        <option value="nthFibonacci">Get nth Fibonacci number</option>
+                        <option value="gcd">Find the greatest common divisor of two numbers</option>
+                        <option value="removeDuplicatesFromArray">Remove duplicate members from an array</option>
+                        <option value="mergeSortedArrays">Merge two sorted arrays</option>
+                        <option value="swapWithoutTemp">Swap two numbers without using a temp variable</option>
+                        <option value="reverseString">Reverse a string in JavaScript</option>
+                        <option value="reverseWords">Reverse words in a sentence</option>
+                        <option value="reverseWordsInPlace">Reverse words in place</option>
+                        <option value="firstNonRepeatingChar">Find the first non-repeating char in a string</option>
+                        <option value="removeDuplicateChars">Remove duplicate characters from a string</option>
+                        <option value="verifyPalindrome">Verify a word as palindrome</option>
+                        <option value="generateRandomBetween5And7">Generate random between 5 to 7 by using defined
+                            function</option>
+                        <option value="findMissingNumber">Find missing number from unsorted array of integers</option>
+                        <option value="checkSumToGivenNumber">Check whether any two numbers in an array sums to a given
+                            number</option>
+                        <option value="largestSumOfTwoElements">Find the largest sum of any two elements</option>
+                        <option value="totalZerosUpToN">Total number of zeros from 1 upto n</option>
+                        <option value="matchSubstring">Match substring of a string</option>
+                        <option value="allPermutations">Create all permutation of a string</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputNumber">Digite um número:</label>
+                    <input type="text" class="form-control" id="inputNumber" placeholder="Digite o número">
+                </div>
+
+                <div class='button-div'>
+                    <button type="button" class="btn btn-primary">Realizar Operação</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Include Black Dashboard JS -->
+    <script src="js/material-dashboard.js"></script>
+</body>
+
+</html>
