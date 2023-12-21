@@ -5,52 +5,16 @@
     <title>FuncBox: Mathematical Toolkit</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="css/material-dashboard.min.css">
-
-    <!-- Include Black Dashboard CSS -->
     <link rel="stylesheet" href="css/material-dashboard.css">
-    <style>
-        body {
-            background-color: #212529;
-            color: #ffffff;
-        }
-
-        .form-group label {
-            color: #ffffff;
-        }
-
-        .form-control {
-            background-color: #343a40;
-            color: #ffffff;
-        }
-
-        .btn-primary {
-            background-color: #212529;
-            border-color: #212529;
-        }
-
-        .btn-primary:hover {
-            background-color: #212532;
-            border-color: #212532;
-        }
-
-        .button-div {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        h2 {
-            color: #661645;
-        }
-    </style>
 </head>
 
-<body>
+<body class='body'>
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h2 class="text-center">FuncBox: Mathematical Toolkit</h2>
+                <h2 class="text-center h2">FuncBox: Mathematical Toolkit</h2>
 
                 <div class="form-group">
                     <label for="functionSelect">Escolha uma função:</label>
@@ -85,18 +49,21 @@
                     <input type="text" class="form-control" id="inputNumber" placeholder="Digite o número">
                 </div>
 
-                <div class='button-div'>
-                    <button type="button" class="btn btn-primary">Realizar Operação</button>
+                <div id="result-container" class="mt-3">
+                    <div id="result"></div>
                 </div>
+
+                <div class='button-div'>
+                    <button id="performOperationBtn" type="button" class="btn btn-primary">Realizar Operação</button>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <!-- Include Bootstrap JS and jQuery -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- Include Black Dashboard JS -->
+    <script src="./functions.js"></script>
     <script src="js/material-dashboard.js"></script>
 </body>
 

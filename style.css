@@ -1,0 +1,32 @@
+.body {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.form-group label {
+    color: #ffffff;
+}
+
+.form-control {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-primary:hover {
+    background-color: #212532;
+    border-color: #212532;
+}
+
+.button-div {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.h2 {
+    color: #661645 !important;
+}
