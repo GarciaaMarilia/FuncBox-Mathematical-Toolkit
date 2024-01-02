@@ -4,6 +4,8 @@ function chooseFunction(selectedFunction, inputValue) {
    return primeNumber(inputValue);
   case "primeFactors":
    return primeFactors(inputValue);
+  case "nthFibonacci":
+   return fibonacciSequency(inputValue);
   default:
    return "No Function";
  }
@@ -36,6 +38,13 @@ function primeFactors(number) {
  return `Os fatores primos são ${String(factors).split(", ")}`;
 }
 
+function fibonacciSequency(number) {
+ if (number <= 1) {
+  return number;
+ } else {
+  return fibonacciSequency(number - 1) + fibonacciSequency(number - 2);
+ }
+}
 // HTML
 
 document
