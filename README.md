@@ -3,7 +3,7 @@
 FuncBox is a web application that serves as a mathematical toolkit, providing a set of functions for various mathematical operations. Users can choose from a selection of tasks, including verifying prime numbers, finding prime factors, calculating Fibonacci numbers, and more.
 
 <p align="center">
-  <img src="project-screenshot.jpeg" alt="FuncBox Screenshot">
+  <img src="./src/project-screenshot.jpeg" alt="FuncBox Screenshot">
 </p>
 
 ## Features
