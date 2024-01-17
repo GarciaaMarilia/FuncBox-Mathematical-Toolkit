@@ -18,6 +18,8 @@ function chooseFunction(
    }
   case "removeDuplicatesFromArray":
    return removeDuplicatesFromArray(inputValue);
+  case "mergeSortedArrays":
+   return mergeSortedArrays(inputValue, secondInputValue);
   default:
    return "No Function";
  }
@@ -80,7 +82,6 @@ function greatestCommonDivisor(a, b) {
 function removeDuplicatesFromArray(array) {
  const auxArray = [];
 
- console.log(array)
  for (const item of array) {
   if (!auxArray.includes(item)) {
    auxArray.push(item);
@@ -88,6 +89,15 @@ function removeDuplicatesFromArray(array) {
  }
  return auxArray;
 }
+
+function mergeSortedArrays(arrayOne, arrayTwo) {
+ const mergedArray = [...arrayOne, ...arrayTwo];
+
+ const arraySorted = mergedArray.sort((a, b) => a - b);
+
+ return arraySorted;
+}
+
 // HTML
 
 document
@@ -100,7 +110,14 @@ document
 function getFunctions(selectedFunction) {
  const inputsDiv = document.getElementById("containerInputs");
 
- if (selectedFunction === "gcd") {
+ if (selectedFunction === "mergeSortedArrays") {
+  inputsDiv.innerHTML = `
+    <label for="input">Enter with an array (numbers must be separated by space):</label>
+    <input type="text" class="form-control" id="input" placeholder="Enter with an array">
+    <label for="inputTwo">Enter with an array (numbers must be separated by space):</label>
+    <input type="text" class="form-control" id="inputTwo" placeholder="Enter with an array">
+    `;
+ } else if (selectedFunction === "gcd") {
   inputsDiv.innerHTML = `
     <label for="input">Enter with a number:</label>
     <input type="text" class="form-control" id="input" placeholder="Enter with a number">
@@ -126,13 +143,16 @@ document
   const selectedFunction = document.getElementById("functionSelect").value;
   const inputValue = document.getElementById("input").value.trim();
   const secondInputValue =
-   selectedFunction === "gcd"
-    ? parseInt(document.getElementById("inputTwo").value)
+   selectedFunction === "gcd" || selectedFunction === "mergeSortedArrays"
+    ? String(document.getElementById("inputTwo").value.trim())
     : undefined;
 
   let result;
-
-  if (selectedFunction === "removeDuplicatesFromArray") {
+  if (selectedFunction === "mergeSortedArrays") {
+   const inputArray = inputValue.split(" ").map(Number);
+   const inputSecondArray = secondInputValue.split(" ").map(Number);
+   result = chooseFunction(selectedFunction, inputArray, inputSecondArray);
+  } else if (selectedFunction === "removeDuplicatesFromArray") {
    const inputArray = inputValue.split(" ").map(Number);
    result = chooseFunction(selectedFunction, inputArray);
   } else if (selectedFunction === "gcd" && secondInputValue) {
