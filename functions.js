@@ -20,6 +20,8 @@ function chooseFunction(
    return removeDuplicatesFromArray(inputValue);
   case "mergeSortedArrays":
    return mergeSortedArrays(inputValue, secondInputValue);
+  case "swapWithoutTemp":
+   return swapWithoutTemp(inputValue, secondInputValue);
   default:
    return "No Function";
  }
@@ -98,6 +100,20 @@ function mergeSortedArrays(arrayOne, arrayTwo) {
  return arraySorted;
 }
 
+function swapWithoutTemp(a, b) {
+ let numberA = Number(a);
+ let numberB = Number(b);
+
+ const beforeSwap = `before swap: a: ${numberA} b: ${numberB}`;
+
+ numberB = numberB - numberA;
+ numberA = numberA + numberB;
+ numberB = numberA - numberB;
+
+ const afterSwap = `after swap: a: ${numberA} b: ${numberB}`;
+
+ return `${beforeSwap} ${afterSwap}`;
+}
 // HTML
 
 document
@@ -117,7 +133,10 @@ function getFunctions(selectedFunction) {
     <label for="inputTwo">Enter with an array (numbers must be separated by space):</label>
     <input type="text" class="form-control" id="inputTwo" placeholder="Enter with an array">
     `;
- } else if (selectedFunction === "gcd") {
+ } else if (
+  selectedFunction === "gcd" ||
+  selectedFunction === "swapWithoutTemp"
+ ) {
   inputsDiv.innerHTML = `
     <label for="input">Enter with a number:</label>
     <input type="text" class="form-control" id="input" placeholder="Enter with a number">
@@ -143,7 +162,9 @@ document
   const selectedFunction = document.getElementById("functionSelect").value;
   const inputValue = document.getElementById("input").value.trim();
   const secondInputValue =
-   selectedFunction === "gcd" || selectedFunction === "mergeSortedArrays"
+   selectedFunction === "gcd" ||
+   selectedFunction === "mergeSortedArrays" ||
+   selectedFunction === "swapWithoutTemp"
     ? String(document.getElementById("inputTwo").value.trim())
     : undefined;
 
@@ -155,7 +176,10 @@ document
   } else if (selectedFunction === "removeDuplicatesFromArray") {
    const inputArray = inputValue.split(" ").map(Number);
    result = chooseFunction(selectedFunction, inputArray);
-  } else if (selectedFunction === "gcd" && secondInputValue) {
+  } else if (
+   (selectedFunction === "gcd" || selectedFunction === "swapWithoutTemp") &&
+   secondInputValue
+  ) {
    result = chooseFunction(selectedFunction, inputValue, secondInputValue);
   } else {
    result = chooseFunction(selectedFunction, inputValue);
