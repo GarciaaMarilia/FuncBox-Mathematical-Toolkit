@@ -22,6 +22,10 @@ function chooseFunction(
    return mergeSortedArrays(inputValue, secondInputValue);
   case "swapWithoutTemp":
    return swapWithoutTemp(inputValue, secondInputValue);
+  case "reverseString":
+   return reverseString(inputValue);
+  case "verifyPalindrome":
+   return verifyPalindrome(inputValue);
   default:
    return "No Function";
  }
@@ -114,6 +118,24 @@ function swapWithoutTemp(a, b) {
 
  return `${beforeSwap} ${afterSwap}`;
 }
+
+function reverseString(str) {
+ let rvStr = "";
+ for (let i = str.length - 1; i >= 0; i--) {
+  rvStr += str[i];
+ }
+ return rvStr;
+}
+
+function verifyPalindrome(str) {
+ let reversedString = reverseString(str);
+
+ if (str == reversedString) {
+  return "It's a palindrome";
+ } else {
+  return "It's not a palindrome";
+ }
+}
 // HTML
 
 document
@@ -147,6 +169,14 @@ function getFunctions(selectedFunction) {
   inputsDiv.innerHTML = `
     <label for="input">Enter with an array (numbers must be separated by space):</label>
     <input type="text" class="form-control" id="input" placeholder="Enter with an array">
+    `;
+ } else if (
+  selectedFunction === "reverseString" ||
+  selectedFunction === "verifyPalindrome"
+ ) {
+  inputsDiv.innerHTML = `
+    <label for="input">Enter with a string:</label>
+    <input type="text" class="form-control" id="input" placeholder="Enter with a string">
     `;
  } else {
   inputsDiv.innerHTML = `
